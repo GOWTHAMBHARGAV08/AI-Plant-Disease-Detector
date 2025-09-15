@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* KisanMitra Design System - Farming-inspired colors and gradients
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Nature-inspired background system */
+    --background: 45 20% 98%;
+    --foreground: 140 20% 15%;
+
+    /* Card system with subtle earth tones */
+    --card: 0 0% 100%;
+    --card-foreground: 140 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 140 20% 15%;
+
+    /* Primary: Deep forest green */
+    --primary: 140 60% 25%;
+    --primary-foreground: 45 50% 98%;
+    --primary-glow: 140 60% 35%;
+
+    /* Secondary: Golden harvest yellow */
+    --secondary: 45 85% 60%;
+    --secondary-foreground: 140 60% 15%;
+
+    /* Muted earth tones */
+    --muted: 40 15% 92%;
+    --muted-foreground: 140 15% 45%;
+
+    /* Accent: Earth brown */
+    --accent: 25 35% 65%;
+    --accent-foreground: 45 50% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 45 50% 98%;
+
+    /* Subtle nature borders */
+    --border: 140 20% 88%;
+    --input: 140 20% 94%;
+    --ring: 140 60% 25%;
+
+    --radius: 0.75rem;
+
+    /* Enhanced KisanMitra gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(25 70% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-nature: linear-gradient(180deg, hsl(45 20% 98%), hsl(140 15% 95%));
+    --gradient-farming: linear-gradient(135deg, hsl(120 60% 50%) 0%, hsl(90 60% 60%) 50%, hsl(60 90% 70%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(142 30% 98%) 100%);
+    --gradient-dashboard: linear-gradient(135deg, hsl(142 40% 95%) 0%, hsl(120 30% 97%) 50%, hsl(100 40% 96%) 100%);
+
+    /* Enhanced farming-inspired shadows */
+    --shadow-nature: 0 10px 30px -10px hsl(var(--primary) / 0.15);
+    --shadow-card: 0 4px 20px -4px hsl(var(--primary) / 0.1);
+    --shadow-farming: 0 8px 25px -8px hsl(120 60% 50% / 0.25);
+    --shadow-hover: 0 12px 35px -10px hsl(var(--primary) / 0.4);
+    
+    /* Smooth transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: 
+      linear-gradient(rgba(255, 255, 255, 0.81), rgba(255, 255, 255, 0.81)),
+      url('/lovable-uploads/b289a1d8-4d84-4e03-b6a6-c50214a5be6e.png'),
+      var(--gradient-nature);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  /* Enhanced KisanMitra component styles */
+  .btn-farming {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl px-8 py-3 font-semibold;
+    background: var(--gradient-primary);
+    box-shadow: var(--shadow-nature);
+    transition: var(--transition-smooth);
+  }
+
+  .btn-farming:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .btn-secondary-farming {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-xl px-8 py-3 font-semibold;
+    background: var(--gradient-secondary);
+    transition: var(--transition-smooth);
+  }
+
+  .btn-secondary-farming:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .card-farming {
+    @apply bg-card rounded-2xl p-6 border border-primary/10;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+    backdrop-filter: blur(10px);
+    transition: var(--transition-smooth);
+  }
+
+  .card-farming:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .dashboard-card {
+    @apply bg-white/90 backdrop-blur-md rounded-2xl border border-green-100/50 transition-all duration-500 transform hover:-translate-y-1 hover:scale-[1.02];
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+  }
+
+  .dashboard-card:hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  .icon-bounce {
+    @apply transition-transform duration-300 hover:scale-110 hover:rotate-3;
+  }
+
+  .farming-pattern {
+    background: var(--gradient-dashboard);
+    background-image: 
+      radial-gradient(circle at 20% 50%, hsl(var(--primary) / 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(var(--secondary) / 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, hsl(45 93% 47% / 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 60% 60%, hsl(120 40% 70% / 0.05) 0%, transparent 40%);
+  }
+
+  /* Enhanced animations */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
